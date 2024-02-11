@@ -37,31 +37,39 @@ const myfunc = () => {
 
 /*Snake, Water and Gun Game */
 
-const swg = ()=>{
-let again=true;
-while(again){
-let random = Math.floor(Math.random() * 3) + 1;
-switch (random) {
-  case 1:
-    random = 'snake';
-    break;
-  case 2:
-    random = 'water';
-    break;
-  case 3:
-    random = 'gun';
-    break;
+const swg = () => {
+    let again = true;
+    while (again) {
+        let random = Math.floor(Math.random() * 3) + 1;
+        let computerChoice;
+        switch (random) {
+            case 1:
+                computerChoice = 'snake';
+                break;
+            case 2:
+                computerChoice = 'water';
+                break;
+            case 3:
+                computerChoice = 'gun';
+                break;
+        }
+        let user = window.prompt("Enter either Snake or Water or Gun").toLowerCase();
+        if (random === 1) random = 'snake';
+        else if (random === 2) random = 'water';
+        else random = 'gun';
+
+        if (random === user) {
+            alert(`It's a Draw\nComputer: ${computerChoice}\nUser: ${user}`);
+        } else if ((computerChoice === 'snake' && user === 'water') || 
+                   (computerChoice === 'water' && user === 'gun') || 
+                   (computerChoice === 'gun' && user === 'snake')) {
+            alert(`Sorry! You Lost\nComputer: ${computerChoice}\nUser: ${user}`);
+        } else {
+            alert(`Congratulations! You Won\nComputer: ${computerChoice}\nUser: ${user}`);
+        }
+        again = confirm('Do you want to play again?');
+    }
 }
-let user= window.prompt("Enter either Snake or Water or Gun");
-if(random===user){
-  alert(`Its a Draw\n Computer: ${random}\n User: ${user}`);
-}
-else if((random==='snake' && user==='water') || (random==='water' && user==='gun') || (random==='gun' && user==='snake')){
-  alert(`Sorry! You Lost\n Computer: ${random}\n User: ${user}`);
-}
-else if((random==='snake' && user==='gun') || (random==='water' && user==='snake') || (random==='gun' && user==='water')){
-  alert(`Congratulations! You Won\n Computer: ${random}\n User: ${user}`);
-}
-  again= confirm('Do u want to play again');
-}
-}
+
+swg();
+
