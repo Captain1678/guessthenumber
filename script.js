@@ -16,7 +16,7 @@ const myfunc = () => {
         const secondfunc = () => {
             let abcd = window.prompt("Enter the color you want to apply to this page ^_^.\nThe colors are: Yellow, Red, and Purple and if you want to revert it back, type default",); // 2nd "" is default value
 
-            if(abcd == null){
+            if(abcd === null){
                 return;
             }
             if (abcd === "Yellow") {
