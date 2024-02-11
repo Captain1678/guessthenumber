@@ -56,10 +56,10 @@ let user= window.prompt("Enter either Snake or Water or Gun");
 if(random===user){
   alert(`Its a Draw\n Computer: ${random}\n User: ${user}`);
 }
-else if((random==='s' && user==='w') || (random==='w' && user==='g') || (random==='g' && user==='s')){
+else if((random==='snake' && user==='water') || (random==='water' && user==='gun') || (random==='g' && user==='s')){
   alert(`Sorry! You Lost\n Computer: ${random}\n User: ${user}`);
 }
-else if((random==='s' && user==='g') || (random==='w' && user==='s') || (random==='g' && user==='w')){
+else if((random==='snake' && user==='gun') || (random==='water' && user==='snake') || (random==='g' && user==='w')){
   alert(`Congratulations! You Won\n Computer: ${random}\n User: ${user}`);
 }
   again= confirm('Do u want to play again');
